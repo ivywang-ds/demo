@@ -54,4 +54,4 @@ def search():
 
 if __name__ == '__main__':
     create_db()  # Create the database and populate with sample data
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run()
