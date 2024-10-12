@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Items</title>
+</head>
+<body>
+    <h1>Ivys Demo App</h1>
+    <h1>Search Items</h1>
+    
+    <form method="POST">
+        <input type="text" name="query" placeholder="Search for an product" required>
+        <button type="submit">Search</button>
+    </form>
+    
+    <hr>
+    
+    {% if results %}
+        <h2>Hallo! Your Search Results:</h2>
+        <ul>
+            {% for result in results %}
+                <li><strong>{{ result[1] }}</strong>: {{ result[2] }}</li>
+            {% endfor %}
+        </ul>
+    {% elif results is not none %}
+        <p>No results found.</p>
+    {% endif %}
+    
+</body>
+</html>
